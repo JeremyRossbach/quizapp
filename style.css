@@ -1,0 +1,25 @@
+body {
+    min-height: 100vh;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quiz-answer-card:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.bg-success, .bg-danger {
+    color: white !important;
+}
