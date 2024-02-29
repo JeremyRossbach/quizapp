@@ -1,12 +1,18 @@
 body {
+    margin: 8px;
     min-height: 100vh;
+    max-height: 100vh;
+}
+
+.margin {
+    margin: 16px;
 }
 
 .card-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 90vh;
 }
 
 .card-footer {
@@ -20,6 +26,30 @@ body {
     cursor: pointer;
 }
 
-.bg-success, .bg-danger {
+.bg-success,
+.bg-danger {
     color: white !important;
 }
+
+.card-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+}
+
+.image {
+    width: auto;
+    height: 120px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.progress {
+    --bs-progress-bg: rgb(12, 109, 253) !important;
+    --bs-progress-border-radius: 0 !important;
+    --bs-progress-height: 0.5rem !important;
+}
+

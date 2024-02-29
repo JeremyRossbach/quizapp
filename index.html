@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Das Fußball Quiz</title>
+    <link rel="shortcut icon" href="./img/football.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 
@@ -20,41 +21,77 @@
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="./img/logo.png" alt="Logo" width="30px" height="auto" class="d-inline-block align-text-top">
-                QuizApp
+                <img src="./img/football.png" alt="Logo" width="24px" height="auto"
+                    class="d-inline-block align-text-top">
+                Das Fussball Quiz
             </a>
         </div>
     </nav>
 
-    <div class="card-container">
-        <div class="card" style="width: 35rem;">
-            <img src="./img/quiz-image.jpg" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title" id="question-text">Frage</h5>
-                <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
-                    <div class="card-body" id="answer_1">
-                        Antwort 1
-                    </div>
+    <div class="margin">
+        <div class="card-container" id="beginningscreen">
+            <div class="card text-center" style="width: 35rem;">
+                <div class="card-img-container">
+                    <img class="image" src="./img/football.png" class="card-img-top">
                 </div>
-                <div class="card quiz-answer-card mb-2" onclick="answer('answer_2')">
-                    <div class="card-body" id="answer_2">
-                        Antwort 1
-                    </div>
-                </div>
-                <div class="card quiz-answer-card mb-2" onclick="answer('answer_3')">
-                    <div class="card-body" id="answer_3">
-                        Antwort 1
-                    </div>
-                </div>
-                <div class="card quiz-answer-card mb-2" onclick="answer('answer_4')">
-                    <div class="card-body" id="answer_4">
-                        Antwort 1
-                    </div>
+                <div class="card-body">
+                    <h5 class="card-title">Das Fußball Quiz</h5>
+                    <p class="card-text">Drücke auf den Knopf, um zu starten !</p>
+                    <a href="#" onclick="startQuiz()" class="btn btn-primary">Quiz starten</a>
                 </div>
             </div>
-            <div class="card-footer">
-                <span><b>1</b> von <b id="number-all-questions">5</b> Fragen</span>
-                <button class="btn btn-primary">Nächste Frage</button>
+        </div>
+
+        <div class="card-container" id="question-body" style="display: none;">
+            <div class="card" style="width: 35rem; margin-bottom: 16px;">
+                <img class="quiz-image" src="./img/quiz-image.jpg" class="card-img-top">
+                <!-- progressbar -->
+                <div class="progress" id="progress-bar" role="progressbar" aria-label="Basic example" aria-valuenow="0"
+                    aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 0%"></div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="question-text">Frage</h5>
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
+                        <div class="card-body" id="answer_1">
+                            Antwort 1
+                        </div>
+                    </div>
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_2')">
+                        <div class="card-body" id="answer_2">
+                            Antwort 1
+                        </div>
+                    </div>
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_3')">
+                        <div class="card-body" id="answer_3">
+                            Antwort 1
+                        </div>
+                    </div>
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_4')">
+                        <div class="card-body" id="answer_4">
+                            Antwort 1
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span><b id="number-current-question">1</b> von <b id="number-all-questions">5</b> Fragen</span>
+                    <button onclick="nextQuestion()" class="btn btn-primary" id="next-button" disabled>Nächste
+                        Frage</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container" id="endscreen" style="display: none;">
+            <div class="card text-center" style="width: 35rem;">
+                <div class="card-img-container">
+                    <img class="image" src="./img/pokal.png" class="card-img-top">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Du hast das Quiz beendet</h5>
+                    <p class="card-text">Dein Ergebnis: <b id="amoutn-of-right-answers">5</b> von <b
+                            id="amount-of-questions">5</b> richtig !</p>
+                    <a href="#" onclick="startAgain()" class="btn btn-primary">Erneut spielen</a>
+                </div>
             </div>
         </div>
     </div>
